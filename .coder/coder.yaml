@@ -6,22 +6,22 @@ workspace:
   specs:
     kubernetes:
       cpu:
-        value: 1
+        value: 4
       image:
-        value: your-username/your-project:latest # Rename to the same as your image
+        value: bencdr/team-env:latest
       container-based-vm: 
         value: false
       memory: 
-        value: 1
+        value: 4
       disk: 
-        value: 10
+        value: 20
   configure:
     start:
       value: 
         - name: "Clone the git repository, if it doesn't exist"
           env:
-            GIT_REMOTE: https://github.com/bpmct/coder-project-template.git
-            CLONE_TO: /home/coder/coder-project-template
+            GIT_REMOTE: https://github.com/bpmct/team-env.git
+            CLONE_TO: /home/coder/team-env
           command: |
             # Check if the project directory already exists 
             if [ ! -d $CLONE_TO ]; then
@@ -40,11 +40,5 @@ workspace:
         - name: "Set default folder"
           command: curl https://gist.githubusercontent.com/bpmct/b48b99007284444eea94fe9e96d4a329/raw/set_first_dir.sh | sh
           env:
-            PROJECT_FOLDER: /home/coder/coder-project-template
-  dev-urls:
-    value:
-      - name: web
-        port: 8000
-        scheme: http
-        access: private
+            PROJECT_FOLDER: /home/coder/team-env
 

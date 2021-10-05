@@ -34,7 +34,7 @@ jobs:
         with:
           push: true
           # Change projectname in both places:
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/your-project:latest, ${{ secrets.DOCKERHUB_USERNAME }}/your-project:${{ steps.vars.outputs.sha_short }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/team-env:latest, ${{ secrets.DOCKERHUB_USERNAME }}/team-env:${{ steps.vars.outputs.sha_short }}
           context: .coder/img/
           file: .coder/img/Dockerfile
       -
