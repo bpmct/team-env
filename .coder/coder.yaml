@@ -1,0 +1,50 @@
+# Use our docs for reference:
+# https://coder.com/docs/workspaces/workspaces-as-code/templates
+version: 0.2
+workspace:
+  type: "kubernetes"
+  specs:
+    kubernetes:
+      cpu:
+        value: 1
+      image:
+        value: your-username/your-project:latest # Rename to the same as your image
+      container-based-vm: 
+        value: false
+      memory: 
+        value: 1
+      disk: 
+        value: 10
+  configure:
+    start:
+      value: 
+        - name: "Clone the git repository, if it doesn't exist"
+          env:
+            GIT_REMOTE: https://github.com/bpmct/coder-project-template.git
+            CLONE_TO: /home/coder/coder-project-template
+          command: |
+            # Check if the project directory already exists 
+            if [ ! -d $CLONE_TO ]; then
+              # 1. ensure we have GitHub's host key added to known_hosts
+              touch ~/.ssh/known_hosts
+              if ! grep github.com ~/.ssh/known_hosts > /dev/null; then
+                ssh-keyscan github.com >> ~/.ssh/known_hosts 2> /dev/null
+              fi
+              
+              2. Clone the project
+              echo "$CLONE_TO is empty... Cloning"
+              git clone $GIT_REMOTE $CLONE_TO
+            else
+              echo "$CLONE_TO exists ✅"
+            fi
+        - name: "Set default folder"
+          command: curl https://gist.githubusercontent.com/bpmct/b48b99007284444eea94fe9e96d4a329/raw/set_first_dir.sh | sh
+          env:
+            PROJECT_FOLDER: /home/coder/coder-project-template
+  dev-urls:
+    value:
+      - name: web
+        port: 8000
+        scheme: http
+        access: private
+

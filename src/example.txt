@@ -1,0 +1,11 @@
+When a workspace is created via
+a web link (ex. "Open in Coder"),
+a repository can also be cloned :)
+
+That means, your project itself
+can be inside this repository
+OR you can configure the button
+to clone another repository.
+
+See our guide:
+https://coder.com/docs/admin/templates
