@@ -3,6 +3,7 @@
 An example Coder workspace with a lot of powerful features.
 
 Open in Sandbox:
+
 [![Open in Coder](https://cdn.coder.com/embed-button.svg)](https://sandbox.coder.com/wac/build?project_oauth_service=github&template_oauth_service=github&project_url=git@github.com:bpmct/team-env.git&template_url=https://github.com/bpmct/team-env&template_ref=main&template_filepath=.coder/coder.yaml)
 
 ![Coder dashboard preview](preview.png)
