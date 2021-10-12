@@ -1,15 +1,10 @@
-# Adds a "Desktop" app to this workspace in the Coder dashboard
 apps:
   - name: Desktop
     scheme: http
     port: 6081
-    # Working directory
     working-directory: /home/coder
-    # File path to icon used in application launcher
     icon-path: /coder/apps/desktop.png
-    # VNC server will be started by default in this image
     command: supervisorctl
-    # Array of arguments for command
     args: ["start", "vncserver"]
     health-check:
       exec:
@@ -19,3 +14,44 @@ apps:
         scheme: "http"
         path: "/"
         port: 6081
+  - name: Insomnia
+    scheme: http
+    port: 6081
+    working-directory: /home/coder
+    icon-path: /coder/apps/insomnia/icon.png
+    command: bash
+    args: ["/coder/apps/insomnia/start.sh"]
+    health-check:
+      exec:
+        command: "pgrep"
+        args: ["insomnia"]
+  - name: Portainer
+    scheme: http
+    port: 9000
+    working-directory: /home/coder
+    icon-path: /coder/apps/portainer/icon.png
+    command: bash
+    args: ["/coder/apps/portainer/start.sh"]
+    health-check:
+      http:
+        scheme: "http"
+        path: "/"
+        port: 9000
+  - name: code-server
+    scheme: http
+    port: 8080
+    # Working directory
+    working-directory: /home/coder
+    # File path to icon used in application launcher
+    icon-path: /coder/apps/code-server/icon.png
+    # VNC server will be started by default in this image
+    command: "code-server"
+    # Array of arguments for command
+    args: [
+      "--auth=none"
+    ]
+    health-check:
+      http:
+        scheme: "http"
+        path: "/"
+        port: 8080
