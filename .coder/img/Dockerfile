@@ -24,4 +24,8 @@ RUN curl -L "https://github.com/cdr/code-server/releases/download/v$VERSION/code
     dpkg -i "/tmp/code-server_${VERSION}_$ARCH.deb" && \
     rm "/tmp/code-server_${VERSION}_$ARCH.deb"
 
+# Install JupyterLab
+RUN pip3 install jupyter-core==4.7.1 && \
+    pip3 install jupyterlab
+
 USER coder
