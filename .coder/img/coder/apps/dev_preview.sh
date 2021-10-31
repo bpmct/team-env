@@ -4,7 +4,7 @@
 #!/bin/bash
 
 sudo rm -r /coder
-sudo ln -s $HOME/coder-intellij-template/.coder/img/coder /
+sudo ln -s $HOME/team-env/.coder/img/coder /
 
 echo "--------"
 echo "Created symbolic link from $HOME/coder-intellij-template/.coder/img/coder to /coder"
