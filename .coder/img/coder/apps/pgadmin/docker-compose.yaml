@@ -1,0 +1,40 @@
+version: '3.5'
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      # Since the user has to be logged in to access the application in Coder, we don't need a password
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      # Cannot get this working on a path, even with a hardcoded workspace ID :(
+      # SCRIPT_NAME: /api/v0/workspaces/${CODER_WORKSPACE_ID}/apps/pgadmin
+      #
+      #labels:
+      # - "traefik.frontend.rule=PathPrefix:/api/v0/workspaces/${CODER_proxy/apps/pgadmin"
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+    ports:
+      - "${PGADMIN_PORT:-9001}:80"
+    networks:
+      - postgres
+    restart: unless-stopped
+networks:
+  postgres:
+    driver: bridge
+volumes:
+    postgres:
+    pgadmin:
