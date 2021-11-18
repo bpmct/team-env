@@ -41,6 +41,10 @@ workspace:
           command: curl https://gist.githubusercontent.com/bpmct/b48b99007284444eea94fe9e96d4a329/raw/set_first_dir.sh | sh
           env:
             PROJECT_FOLDER: /home/coder/team-env
+        - name: "Install extensions"
+          command: |
+            /var/tmp/coder/code-server/bin/code-server --install-extension nickytonline.vscode-gatsby-snippets
+            /var/tmp/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
   dev-urls:
     value:
       - name: blog
