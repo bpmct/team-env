@@ -43,7 +43,7 @@ workspace:
             PROJECT_FOLDER: /home/coder/team-env
   dev-urls:
     value:
-      - name: http-blog
+      - name: blog
         port: 8000
         scheme: http
         access: private
