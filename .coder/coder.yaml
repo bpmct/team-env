@@ -6,18 +6,18 @@ workspace:
   specs:
     kubernetes:
       cpu:
-        value: 4
+        value: 6
       image:
         value: bencdr/team-env:latest
-      container-based-vm: 
+      container-based-vm:
         value: true
-      memory: 
-        value: 4
-      disk: 
+      memory:
+        value: 8
+      disk:
         value: 20
   configure:
     start:
-      value: 
+      value:
         - name: "Clone the git repository, if it doesn't exist"
           env:
             GIT_REMOTE: git@github.com:bpmct/team-env.git
