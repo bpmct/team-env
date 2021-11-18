@@ -40,3 +40,9 @@ jobs:
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+      - 
+        name: Refresh image tags (Coder)
+        run: |
+          curl "${{ secrets.CODER_URL }}/api/v0/images/615c53f0-47e7358f279929980d217533/tags/update" \
+          -X 'POST' \
+          -H "Session-Token: ${{ secrets.CODER_TOKEN }}"
