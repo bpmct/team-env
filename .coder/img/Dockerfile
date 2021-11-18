@@ -31,4 +31,12 @@ RUN sudo apt-get install -y xdotool
 RUN pip3 install jupyter-core==4.7.1 && \
     pip3 install jupyterlab
 
+# Install WebStorm
+# Install webstorm.
+RUN mkdir -p /opt/webstorm
+RUN curl -L "https://download.jetbrains.com/product?code=WS&latest&distribution=linux" | tar -C /opt/webstorm --strip-components 1 -xzvf -
+
+# Add a binary to the PATH that points to the webstorm startup script.
+RUN ln -s /opt/webstorm/bin/webstorm.sh /usr/bin/webstorm
+
 USER coder
