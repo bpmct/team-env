@@ -41,4 +41,9 @@ workspace:
           command: curl https://gist.githubusercontent.com/bpmct/b48b99007284444eea94fe9e96d4a329/raw/set_first_dir.sh | sh
           env:
             PROJECT_FOLDER: /home/coder/team-env
-
+  dev-urls:
+    value:
+      - name: http-blog
+        port: 8000
+        scheme: http
+        access: private
