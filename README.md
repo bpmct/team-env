@@ -20,6 +20,11 @@ Open in Sandbox:
 
 - Extends Coder's [VNC](https://github.com/cdr/enterprise-images/tree/main/images/vnc) image to include remote desktop support
 - Custom image that installs applications, dev tools, and dependencies
+- Node.js 16 and Yarn
+
+## Project
+
+Simple node starter blog in `src` folder: https://gatsbystarterblogsource.gatsbyjs.io/
 
 ## Workspace template
 
