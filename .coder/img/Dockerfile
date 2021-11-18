@@ -41,7 +41,7 @@ RUN curl -L "https://download.jetbrains.com/product?code=WS&latest&distribution=
 RUN ln -s /opt/webstorm/bin/webstorm.sh /usr/bin/webstorm
 
 # Install Node.js
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nodejs
 
 # Install Yarn
