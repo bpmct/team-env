@@ -1,3 +1,4 @@
+# Base image: https://github.com/cdr/enterprise-images/tree/main/images/vnc
 FROM codercom/enterprise-vnc:ubuntu
 
 USER root
