@@ -45,9 +45,3 @@ workspace:
           command: |
             /var/tmp/coder/code-server/bin/code-server --install-extension nickytonline.vscode-gatsby-snippets
             /var/tmp/coder/code-server/bin/code-server --install-extension esbenp.prettier-vscode
-  dev-urls:
-    value:
-      - name: blog
-        port: 8000
-        scheme: http
-        access: public
