@@ -46,4 +46,4 @@ workspace:
       - name: blog
         port: 8000
         scheme: http
-        access: private
+        access: public
