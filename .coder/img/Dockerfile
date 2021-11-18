@@ -33,7 +33,6 @@ RUN pip3 install jupyter-core==4.7.1 && \
     pip3 install jupyterlab
 
 # Install WebStorm
-# Install webstorm.
 RUN mkdir -p /opt/webstorm
 RUN curl -L "https://download.jetbrains.com/product?code=WS&latest&distribution=linux" | tar -C /opt/webstorm --strip-components 1 -xzvf -
 
