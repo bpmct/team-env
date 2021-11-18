@@ -39,4 +39,13 @@ RUN curl -L "https://download.jetbrains.com/product?code=WS&latest&distribution=
 # Add a binary to the PATH that points to the webstorm startup script.
 RUN ln -s /opt/webstorm/bin/webstorm.sh /usr/bin/webstorm
 
+# Install Node.js
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nodejs
+
+# Install Yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get install -y yarn
+
 USER coder
