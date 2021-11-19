@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Ben Starter Blog`,
     author: {
-      name: `Jon Doe`,
-      summary: `who lives and works in San Francisco building useful things`,
+      name: `Ben Potter`,
+      summary: `who lives and works in Austin building semi-useful things`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
