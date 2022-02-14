@@ -12,7 +12,7 @@ Or your Coder deployment:
 
 1. Navigate to your Coder deployment
 1. Ensure you've added the image from DockerHub to Coder: `bencdr/bookshop-monorepo:latest`
-1. Ensure "Workspace Templates" are turned on under Manage -> Admin.
+1. Ensure "Workspace Templates" are turned on under Manage -> Admin
 1. Create New Workspace -> From Template
     ```text
     Repository URL: https://github.com/bpmct/team-env
