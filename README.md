@@ -10,8 +10,13 @@ Open in Sandbox:
 
 ## Applications
 
-- Remote desktop from web browser (VNC + noVNC)
+- Custom code-server (VS Code) Version
+- WebStorm (JetBrains IDE)
+- Jupyter Notebooks
+- Remote desktop (VNC)
+    - Web VNC Client (noVNC)
     - Insomnia 
+    - Portainer
 - Podman (container management GUI)
 - code-server (specific version)
 - JupyterLab (via dev URL)
