@@ -78,5 +78,5 @@ apps:
       # check redirect server
       http:
         scheme: "http"
-        port: 7031
-        path: "/health"
+        port: 8822
+        path: "/lab"
