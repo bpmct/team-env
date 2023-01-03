@@ -10,7 +10,7 @@ workspace:
       image:
         value: bencdr/team-env:latest
       container-based-vm:
-        value: true
+        value: false
       memory:
         value: 8
       disk:
